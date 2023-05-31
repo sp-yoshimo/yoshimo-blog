@@ -1,0 +1,155 @@
+/* header */
+
+.header {
+  width: 100vw;
+  /* background-color: rgb(109, 109, 109); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  margin: 10px 15px;
+}
+
+.header .logo .header_img {
+  margin-right: 4px;
+}
+
+.header .logo .header_title {
+  font-size: 1.2rem;
+  font-family: "Kokoro", sans-serif
+}
+
+.header .nav_items {
+  display: flex;
+}
+
+.header .nav_items li {
+  list-style: none;
+  margin-right: 30px;
+  transition: 0.3s;
+}
+
+.header .nav_items li a {
+  font-weight: bold;
+}
+
+.header .nav_items li::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 5px;
+  background: white;
+  transform-origin: left top;
+  opacity: 0;
+  transition: 0.3s;
+  transform: rotateZ(90deg);
+}
+
+.header .nav_items li:hover {
+  color: lightseagreen;
+}
+
+.header .nav_items li:hover::after {
+  opacity: 1;
+  transform: rotateZ(0deg);
+}
+
+.burger_button {
+  display: none;
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: transparent;
+  border: none;
+}
+
+.burger_button span {
+  height: 1px;
+  width: 100%;
+  display: block;
+  background: white;
+  transition: 0.3s;
+}
+
+.burger_button span:first-child {
+  transform: translateY(-5px);
+
+}
+
+.burger_button span:last-child {
+  transform: translateY(5px);
+}
+
+@media screen and (max-width:768px) {
+  .burger_button {
+      display: block;
+  }
+
+  .header .nav {
+      justify-content: space-between;
+      position: relative;
+  }
+
+  .header .nav_items {
+      opacity: 0;
+      display: block;
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: 0.3s;
+  }
+
+  .header .nav_items li {
+      margin-bottom: 30px;
+  }
+
+  .header .nav_items li::after {
+      display: none;
+  }
+
+  .header .nav_items li a {
+      font-size: 1.5rem;
+  }
+
+  .header .nav_items::after {
+      content: "";
+      display: block;
+      width: 1000vw;
+      height: 100vh;
+      background-color: black;
+      opacity: 0.9;
+      position: absolute;
+      top: 0;
+      left: -1000px;
+      z-index: -1;
+  }
+
+  .burger_button.active span:first-child {
+      transform: rotateZ(-45deg);
+  }
+
+  .burger_button.active span:last-child {
+      transform: rotateZ(45deg);
+  }
+
+  .nav_items.active {
+      opacity: 1;
+  }
+
+}
+
