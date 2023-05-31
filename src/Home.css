@@ -98,31 +98,13 @@
 }
 
 @media screen and (max-width:1200px) {
-    .hero_right .content h2 {
+    .hero .content h2 {
         font-size: 3.5rem;
     }
 }
 
 @media screen and (max-width:992px) {
-
-    .hero_left img {
-        display: none;
-    }
-
-    .hero_right {
-        width: 100%;
-        position: relative;
-    }
-
-    .hero_left {
-        width: 0%;
-    }
-
-    .hero_right .content a:hover .fa-right-from-bracket {
-        color: #000;
-    }
-
-    .hero_right .content {
+    .hero .content {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -130,8 +112,8 @@
         text-align: center;
     }
 
-    .hero_left .hero_left_effect-1 {
-        display: none;
+    .hero .content h2{
+        font-size: 2rem;
     }
 
     .scroll{
@@ -141,7 +123,10 @@
 }
 
 @media screen and (max-width:576px) {
-    .hero_right .content h2 {
-        font-size: 2.8rem;
+    .hero .content span{
+        font-size: 0.8rem;
+    }
+    .hero .content h2{
+        white-space: normal;
     }
 }
