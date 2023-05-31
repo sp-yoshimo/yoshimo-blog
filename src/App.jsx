@@ -10,7 +10,7 @@ import NotFound from './components/NotFound'
 function App() {
 
   return (
-    <Router basename={process.env.REACT_APP_PUBLIC_URL}>
+    <Router>
       <div>
         <Header />
         <Routes>
