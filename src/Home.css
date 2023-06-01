@@ -87,6 +87,12 @@
     writing-mode: vertical-rl;
     padding-left: 4px;
 }
+.hero .vector{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    display: none;
+}
 
 @keyframes scrollsuggest{
     0%{
@@ -126,7 +132,14 @@
     .hero .content span{
         font-size: 0.8rem;
     }
+    .hero .content{
+        width: 100%;
+        padding: 20px;
+    }
     .hero .content h2{
         white-space: normal;
+    }
+    .hero .content a{
+        font-size: 0.8rem;
     }
 }

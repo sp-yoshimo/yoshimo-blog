@@ -1,10 +1,9 @@
 import React from "react";
 import "../App.css"
 import bg_video from "../assets/video/night_load.mp4"
-import pc from "../assets/img/hero-pc.jpg"
-import people from "../assets/img/hero-people.jpg"
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
+import vector_img from "../assets/img/Vector.png"
 
 
 const Hero = () => {
@@ -43,6 +42,7 @@ const Hero = () => {
                 <source src={bg_video} />
             </video>
             <div className="container">
+                <img src={vector_img} alt="vector" className="vector" />
                 <div className="content">
                     <h2>
                         Yoshimo HomePage
