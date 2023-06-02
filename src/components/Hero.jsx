@@ -4,7 +4,7 @@ import bg_video from "../assets/video/night_load.mp4"
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { gsap } from "gsap";
-import { hero_words } from "../resource/Data.js";
+import { hero_words } from "../resource/HeroData.js";
 
 
 const Hero = () => {

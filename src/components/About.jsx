@@ -4,6 +4,7 @@ const About = () => {
     return(
         <section className="about">
             <h2>Section</h2>
+            
         </section>
     );
 };

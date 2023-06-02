@@ -18,7 +18,7 @@ const Header = () => {
         <div className="header" >
             <div className="nav">
                 <div className="logo">
-                    <img src={logo} width={60} height={60} className="header_img" alt='logo' />
+                    <img src={logo} width={60} height={60} className="header_img" alt='logo' draggable={false}/>
                     <h3 className="header_title">Yoshimo</h3>
                 </div>
                 <nav>

@@ -25,8 +25,9 @@ const Home = () => {
             })
             gsap.to(
                 img_slider.current, {
-                translateX: "300%",
-                duration: 6, 
+                translateY: "-200%",
+                display:"none",
+                duration: 3, 
                 delay:0.5,
             }
             )
