@@ -391,11 +391,14 @@ section.about{
     .three{
         width: 100%;
         display: block;
-        height: auto;
         padding: 10px;
+        overflow: hidden;
     }
     .three .content{
         width: 100%;
+    }
+    .three canvas{
+        /* height: 100vh; */
     }
     .three .content p{
         line-height: 40px;
