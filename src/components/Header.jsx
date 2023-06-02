@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import '../App.css'
+import "../styles/App.css"
 import logo from "../assets/img/yoshimo_logo.png"
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
                 <nav>
                     <ul className="nav_items" ref={nav_items}>
                         <li>
-                            <a href="/">HOME</a>
+                            <a href="/home">HOME</a>
                         </li>
                         <li>
                             <a href="/blog">BLOG</a>

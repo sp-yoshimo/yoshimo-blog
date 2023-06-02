@@ -1,4 +1,4 @@
-import './App.css'
+import "./styles/App.css"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Header from './components/Header'
 import Home from './routes/Home'
@@ -15,6 +15,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/blog/:id' element={<BlogDetail />} />
           <Route path='/contact' element={<Contact />} />

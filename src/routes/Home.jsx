@@ -1,10 +1,61 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Hero from "../components/Hero";
-import "../Home.css"
+import "../styles/Home.css"
+import { gsap } from "gsap";
+import About from "../components/About";
 
 const Home = () => {
-    return(
-        <Hero />
+
+    //GSAPアニメーションで用いるためのDOM要素を取得
+    const overlay1 = useRef()
+    const img_slider = useRef()
+    const homeref = useRef()
+
+    const location_pathname = window.location.pathname
+
+
+    //GSAPによる読み込み時のアニメーション
+    useEffect(() => {
+        if (location_pathname !== "/home") {
+            gsap.to(overlay1.current, {
+                translateY: "-100%",
+                duration:1.2,
+                opacity: 0,
+                delay: 2
+            })
+            gsap.to(
+                img_slider.current, {
+                translateX: "300%",
+                duration: 6, 
+                delay:0.5,
+            }
+            )
+            gsap.to(
+                homeref.current, {
+                height: "auto",
+                delay: 3,
+            })
+        }else{
+            gsap.to(overlay1.current, {
+                translateY: "-1000%",
+                opacity:0
+            })
+            gsap.to(
+                img_slider.current, {
+                translateX: "-1000%",
+                opacity:0,
+            }
+            )
+        }
+    }, [])
+
+    return (
+        <div className="home" ref={homeref}>
+            <div className="overlay" ref={overlay1}></div>
+            <div className="img_slider" ref={img_slider}></div>
+            <Hero />
+            <About />
+        </div>
     )
 };
 

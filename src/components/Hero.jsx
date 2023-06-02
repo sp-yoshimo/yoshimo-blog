@@ -1,27 +1,94 @@
 import React from "react";
-import "../App.css"
+import "../styles/App.css"
 import bg_video from "../assets/video/night_load.mp4"
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import vector_img from "../assets/img/Vector.png"
+import { gsap } from "gsap";
+import { hero_words } from "../resource/Data.js";
 
 
 const Hero = () => {
 
     const typedref = useRef()
 
+    const main_block = useRef()
+    const sub_block = useRef()
+    const pc_img = useRef()
+    const scroll_suggest = useRef()
+
+    const location_pathname = window.location.pathname
+
     //Typed.jsの処理
     useEffect(() => {
+
+        if (location_pathname === "/") {
+            //GSAPによるアニメーション処理
+            gsap.fromTo(main_block.current, {
+                width: "100%",
+                height: "100vh",
+                borderRadius: 0,
+                position: "relative",
+            }, {
+                position: "absolute",
+                width: "80%",
+                height: "80vh",
+                duration: 1,
+                delay: 2
+            })
+
+            gsap.fromTo(sub_block.current, {
+                left: "-400px"
+            }, {
+                left: "5%",
+                duration: 1,
+                delay: 2
+            })
+
+            gsap.fromTo(scroll_suggest.current, {
+                bottom: "-300px"
+            }, {
+                bottom: "30px",
+                duration: 1,
+                delay: 2
+            })
+
+        } else if (location_pathname === "/home") {
+            gsap.fromTo(main_block.current, {
+                width: "100%",
+                height: "100vh",
+                borderRadius: 0,
+                position: "relative",
+            }, {
+                position: "absolute",
+                width: "80%",
+                height: "80vh",
+                borderRadius:"30px",
+                duration: 1,
+                delay: 0.3
+            })
+
+            gsap.fromTo(sub_block.current, {
+                left: "-40%"
+            }, {
+                left: "5%",
+                duration: 1,
+                delay: 0.3
+            })
+
+            gsap.fromTo(scroll_suggest.current, {
+                bottom: "-300px"
+            }, {
+                bottom: "30px",
+                duration: 1,
+                delay: 0.3
+            })
+        }
+
         const options = {
-            strings: [
-                "The only impossible journey is the one you never begin.",
-                "Life is really simple, but we insist on making it complicated.",
-                "All you need in this life is ignorance and confidence, and then success is sure.",
-                "Do what you feel in your heart to be right - for you'll be criticized anyway.",
-                "If you don't like where you are, change it. You're not a tree. ",
-            ], // 表示するテキストの配列
-            typeSpeed: 40, // テキストがタイプされる速度（ミリ秒）
+            strings: hero_words, // 表示するテキストの配列
+            typeSpeed: 70, // テキストがタイプされる速度（ミリ秒）
             backSpeed: 35, // テキストが削除される速度（ミリ秒）
+            startDelay: location_pathname === "/home" ? 0 : 3000,
             loop: true,
         };
 
@@ -37,23 +104,28 @@ const Hero = () => {
 
     return (
         <div className="hero">
-            <div className="hero_bg_overlay"></div>
-            <video muted autoPlay loop>
-                <source src={bg_video} />
-            </video>
-            <div className="container">
-                <img src={vector_img} alt="vector" className="vector" />
-                <div className="content">
-                    <h2>
-                        Yoshimo HomePage
-                    </h2>
-                    <span ref={typedref}></span>
-                    <br />
-                    <a href="/blog">BLOG</a>
+            <div className="sub_block" ref={sub_block}>
+                <p>日進月歩。</p>
+            </div>
+            <div className="main_block" ref={main_block}>
+                <div className="hero_bg_overlay"></div>
+                <video muted autoPlay loop>
+                    <source src={bg_video} />
+                </video>
+                <div className="container">
+                    <div className="content">
+                        <h2>
+                            Yoshimo HomePage
+                        </h2>
+                        <span ref={typedref}></span>
+                        <br />
+                        <a href="/blog">BLOG</a>
+                    </div>
                 </div>
-                <div className="scroll">
-                    <p>Scroll</p>
-                </div>
+            </div>
+            {/* <div className="effect" ref={pc_img}></div> */}
+            <div className="scroll" ref={scroll_suggest}>
+                <p>Scroll</p>
             </div>
         </div>
     );
