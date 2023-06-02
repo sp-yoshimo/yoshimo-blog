@@ -311,6 +311,12 @@ section.about{
     object-fit: cover;
 }
 
+@media screen and (max-width:1200px){
+    .about{
+        width: 100%;
+    }
+}
+
 @media screen and (max-width:992px){
     .about{
         display: block;
@@ -373,6 +379,12 @@ section.about{
 
 .three canvas{
     order: 2;
+}
+
+@media screen and (max-width:1200px){
+    .three{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width:992px){

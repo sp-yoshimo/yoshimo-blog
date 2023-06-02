@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { useGLTF, PerspectiveCamera, OrbitControls, Stage } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
+// import model from ""
 
 function Model() {
-    const { scene } = useGLTF("/src/assets/models/scene.gltf");
+    const { scene } = useGLTF("/models/scene.gltf");
 
     const ball_ref = useRef()
 
