@@ -13,10 +13,12 @@ const Hero = () => {
 
     const main_block = useRef()
     const sub_block = useRef()
-    const pc_img = useRef()
+    const sub_text = useRef()
     const scroll_suggest = useRef()
 
     const location_pathname = window.location.pathname
+
+    const startDelay = location_pathname === "/" ? 2 : 0.3
 
     //Typed.jsの処理
     useEffect(() => {
@@ -33,7 +35,7 @@ const Hero = () => {
                 width: "80%",
                 height: "80vh",
                 duration: 1,
-                delay: 2
+                delay: startDelay
             })
 
             gsap.fromTo(sub_block.current, {
@@ -41,7 +43,7 @@ const Hero = () => {
             }, {
                 left: "5%",
                 duration: 1,
-                delay: 2
+                delay: startDelay
             })
 
             gsap.fromTo(scroll_suggest.current, {
@@ -49,8 +51,17 @@ const Hero = () => {
             }, {
                 bottom: "30px",
                 duration: 1,
-                delay: 2
+                delay: startDelay
             })
+
+            gsap.fromTo(sub_text.current, {
+                opacity: 0
+            }, {
+                opacity: 1,
+                duration: 1,
+                delay: startDelay + 1.3
+            })
+
 
         } else if (location_pathname === "/home") {
             gsap.fromTo(main_block.current, {
@@ -62,9 +73,9 @@ const Hero = () => {
                 position: "absolute",
                 width: "80%",
                 height: "80vh",
-                borderRadius:"30px",
+                borderRadius: "30px",
                 duration: 1,
-                delay: 0.3
+                delay: startDelay
             })
 
             gsap.fromTo(sub_block.current, {
@@ -72,7 +83,7 @@ const Hero = () => {
             }, {
                 left: "5%",
                 duration: 1,
-                delay: 0.3
+                delay: startDelay
             })
 
             gsap.fromTo(scroll_suggest.current, {
@@ -80,7 +91,15 @@ const Hero = () => {
             }, {
                 bottom: "30px",
                 duration: 1,
-                delay: 0.3
+                delay: startDelay
+            })
+
+            gsap.fromTo(sub_text.current, {
+                opacity: 0
+            }, {
+                opacity: 1,
+                duration: 1,
+                delay: startDelay + 1.3
             })
         }
 
@@ -105,7 +124,7 @@ const Hero = () => {
     return (
         <div className="hero">
             <div className="sub_block" ref={sub_block}>
-                <p>日進月歩。</p>
+                <p ref={sub_text}>日進月歩</p>
             </div>
             <div className="main_block" ref={main_block}>
                 <div className="hero_bg_overlay"></div>

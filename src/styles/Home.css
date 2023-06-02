@@ -1,6 +1,20 @@
+/* common */
+section{
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+@media screen and (max-width:992px) {
+    section{
+        padding-top: 30px;
+    }
+}
+
+
 .home{
     width: 100%;
     overflow-x: hidden;
+    font-family: 'Noto Serif JP', serif;
 }
 
 .home .overlay {
@@ -32,7 +46,6 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-image: linear-gradient( 135deg, #494949 10%, #000000 100%);
 }
 
 .hero .main_block {
@@ -128,6 +141,7 @@
     top: 30px;
     left: 10px;
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .scroll {
@@ -247,3 +261,132 @@
 
 
 /* About section */
+section.about{
+    font-family: 'Noto Serif JP', serif;
+    position: relative;
+}
+
+.about{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.about .content{
+    width: 50%;
+    padding: 50px;
+}
+
+.about .content h2{
+    text-align: left;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.about .content h2::after{
+    content: "";
+    display: block;
+    width: 10%;
+    height: 1px;
+    background: white;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+.about .content p{
+    line-height: 55px;
+    letter-spacing: 1px;
+}
+
+.about .img{
+    width: 50%;
+    
+
+}
+
+.about .img img{
+    width: 90%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:992px){
+    .about{
+        display: block;
+        margin: 0;
+        width: 100%;
+    }
+    .about .content{
+        width: 100%;
+        padding: 25px;
+    }
+    .about .img{
+        width: 100%;
+        padding: 0px 30px;
+    }
+    .about .img img{
+        width: 100%;
+    }
+    .about .content p{
+        line-height: 40px;
+        font-size: 0.8rem;
+    }
+}
+
+.three{
+    width: 90%;
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+    overflow-x: hidden;
+    padding-bottom: none;
+    margin-bottom: none;
+}
+
+
+.three .content{
+    width: 70%;
+    order: 2;
+}
+
+.three .content h2{
+    text-align: right;
+    margin-bottom: 30px;
+    position: relative;
+}
+.three .content h2::after{
+    content: "";
+    display: block;
+    width: 10%;
+    height: 1px;
+    background: white;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+}
+
+.three .content p{
+    line-height: 55px;
+    letter-spacing: 1px;
+}
+
+.three canvas{
+    order: 2;
+}
+
+@media screen and (max-width:992px){
+    .three{
+        width: 100%;
+        display: block;
+        height: auto;
+        padding: 10px;
+    }
+    .three .content{
+        width: 100%;
+    }
+    .three .content p{
+        line-height: 40px;
+        font-size: 0.8rem;
+    }
+}

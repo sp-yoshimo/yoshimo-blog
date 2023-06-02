@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import "../styles/Home.css"
 import { gsap } from "gsap";
 import About from "../components/About";
+import Three from "../components/Three";
 
 const Home = () => {
 
@@ -19,32 +20,36 @@ const Home = () => {
         if (location_pathname !== "/home") {
             gsap.to(overlay1.current, {
                 translateY: "-100%",
-                duration:1.2,
+                duration: 1.2,
                 opacity: 0,
                 delay: 2
             })
             gsap.to(
                 img_slider.current, {
                 translateY: "-200%",
-                display:"none",
-                duration: 3, 
-                delay:0.5,
+                display: "none",
+                duration: 3,
+                delay: 0.5,
             }
             )
-            gsap.to(
+            gsap.fromTo(
                 homeref.current, {
+                height: "100vh",
+                overflow:"hidden"
+            }, {
                 height: "auto",
-                delay: 3,
+                overflow: "visiable",
+                delay: 3
             })
-        }else{
+        } else {
             gsap.to(overlay1.current, {
                 translateY: "-1000%",
-                opacity:0
+                opacity: 0
             })
             gsap.to(
                 img_slider.current, {
                 translateX: "-1000%",
-                opacity:0,
+                opacity: 0,
             }
             )
         }
@@ -56,6 +61,7 @@ const Home = () => {
             <div className="img_slider" ref={img_slider}></div>
             <Hero />
             <About />
+            <Three/>
         </div>
     )
 };
