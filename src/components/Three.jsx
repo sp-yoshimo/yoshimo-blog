@@ -3,7 +3,7 @@ import { useGLTF, PerspectiveCamera, OrbitControls, Stage } from "@react-three/d
 import { Canvas, useFrame } from "@react-three/fiber";
 
 function Model() {
-    const { scene } = useGLTF("src/assets/models/scene.gltf");
+    const { scene } = useGLTF("../../src/assets/models/scene.gltf");
 
     const ball_ref = useRef()
 
