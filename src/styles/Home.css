@@ -410,8 +410,8 @@ section.about {
 
 @media screen and (max-width:576px) {
     .three {
-        height: 80vh;
-        margin-bottom: 60px;
+        height: 100vh;
+        /* margin-bottom: 60px; */
     }
 
     .three .div {
