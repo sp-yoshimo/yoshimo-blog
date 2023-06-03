@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { about_section_data } from "../resource/AboutSectionData";
+import { about_section_data } from "../resource/HomeData";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
@@ -18,7 +18,7 @@ const About = () => {
             scrollTrigger: ".about",
             opacity: 1,
             translateY: "0px",
-            duration: 1.4
+            duration: 1.5
         })
 
         gsap.fromTo(img_ref.current, {
@@ -28,7 +28,7 @@ const About = () => {
             scrollTrigger: ".about",
             opacity: 1,
             translateX: "0px",
-            duration: 1.4
+            duration: 1.5
         })
     }, [])
 

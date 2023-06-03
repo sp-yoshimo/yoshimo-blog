@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import Hero from "../components/Hero";
 import "../styles/Home.css"
-import { gsap } from "gsap";
+import { gsap,Expo } from "gsap";
 import About from "../components/About";
 import Three from "../components/Three";
+import Skill from "../components/Skill"
 
 const Home = () => {
 
@@ -35,7 +36,7 @@ const Home = () => {
             gsap.fromTo(
                 homeref.current, {
                 height: "100vh",
-                overflow:"hidden"
+                overflow: "hidden"
             }, {
                 height: "auto",
                 overflow: "visiable",
@@ -61,7 +62,8 @@ const Home = () => {
             <div className="img_slider" ref={img_slider}></div>
             <Hero />
             <About />
-            <Three/>
+            <Three />
+            <Skill />
         </div>
     )
 };

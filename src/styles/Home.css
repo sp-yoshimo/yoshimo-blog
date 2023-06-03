@@ -1,17 +1,4 @@
-/* common */
-section{
-    padding-top: 80px;
-    padding-bottom: 40px;
-}
-
-@media screen and (max-width:992px) {
-    section{
-        padding-top: 30px;
-    }
-}
-
-
-.home{
+.home {
     width: 100%;
     overflow-x: hidden;
     font-family: 'Noto Serif JP', serif;
@@ -117,7 +104,7 @@ section{
     font-size: 1rem;
 }
 
-.hero .sub_block{
+.hero .sub_block {
     position: absolute;
     top: 10%;
     left: 5%;
@@ -132,7 +119,7 @@ section{
 }
 
 
-.hero .sub_block p{
+.hero .sub_block p {
     color: black;
     font-family: 'Noto Serif JP', serif;
     writing-mode: vertical-rl;
@@ -174,18 +161,21 @@ section{
     padding-left: 4px;
 }
 
-@keyframes shapeanimation{
-    0%{
-        border-radius: 54% 46% 55% 45% / 50% 66% 34% 50% ;
+@keyframes shapeanimation {
+    0% {
+        border-radius: 54% 46% 55% 45% / 50% 66% 34% 50%;
     }
-    30%{
-        border-radius: 54% 46% 36% 64% / 59% 66% 34% 41% ;
+
+    30% {
+        border-radius: 54% 46% 36% 64% / 59% 66% 34% 41%;
     }
-    60%{
-        border-radius: 15% 85% 36% 64% / 59% 23% 77% 41% ;
+
+    60% {
+        border-radius: 15% 85% 36% 64% / 59% 23% 77% 41%;
     }
-    90%{
-        border-radius: 51% 49% 52% 48% / 67% 23% 77% 33% ;
+
+    90% {
+        border-radius: 51% 49% 52% 48% / 67% 23% 77% 33%;
     }
 }
 
@@ -204,7 +194,8 @@ section{
     .hero .content h2 {
         font-size: 3rem;
     }
-    .hero .sub_block{
+
+    .hero .sub_block {
         transform: scale(0.8) translateX(-100px) !important;
     }
 }
@@ -217,13 +208,14 @@ section{
 
     .hero .main_block {
         width: 100% !important;
-        position:absolute !important;
+        position: absolute !important;
         top: 0 !important;
         left: 0 !important;
         border-radius: 0 !important;
         height: 100vh !important;
     }
-    .hero .hero_bg_overlay{
+
+    .hero .hero_bg_overlay {
         border-radius: 0;
     }
 
@@ -231,13 +223,14 @@ section{
         font-size: 2rem;
     }
 
-    .hero .effect{
+    .hero .effect {
         display: none;
     }
 
-    .hero .sub_block{
+    .hero .sub_block {
         display: none;
     }
+
     .scroll {
         display: none;
     }
@@ -261,30 +254,31 @@ section{
 
 
 /* About section */
-section.about{
+section.about {
     font-family: 'Noto Serif JP', serif;
     position: relative;
+    padding-top: 80px;
 }
 
-.about{
+.about {
     width: 80%;
     margin: auto;
     display: flex;
     align-items: center;
 }
 
-.about .content{
+.about .content {
     width: 50%;
     padding: 50px;
 }
 
-.about .content h2{
+.about .content h2 {
     text-align: left;
     margin-bottom: 30px;
     position: relative;
 }
 
-.about .content h2::after{
+.about .content h2::after {
     content: "";
     display: block;
     width: 10%;
@@ -295,73 +289,79 @@ section.about{
     left: 0;
 }
 
-.about .content p{
+.about .content p {
     line-height: 55px;
     letter-spacing: 1px;
 }
 
-.about .img{
+.about .img {
     width: 50%;
-    
+
 
 }
 
-.about .img img{
+.about .img img {
     width: 90%;
     object-fit: cover;
 }
 
-@media screen and (max-width:1200px){
-    .about{
+@media screen and (max-width:1200px) {
+    .about {
         width: 100%;
     }
 }
 
-@media screen and (max-width:992px){
-    .about{
+@media screen and (max-width:992px) {
+    .about {
         display: block;
         margin: 0;
         width: 100%;
+        margin-bottom: 60px;
     }
-    .about .content{
+
+    .about .content {
         width: 100%;
-        padding: 25px;
+        padding: 15px;
     }
-    .about .img{
+
+    .about .img {
         width: 100%;
         padding: 0px 30px;
     }
-    .about .img img{
+
+    .about .img img {
         width: 100%;
     }
-    .about .content p{
-        line-height: 40px;
+
+    .about .content p {
+        line-height: 30px;
         font-size: 0.8rem;
     }
 }
 
-.three{
+.three {
     width: 90%;
-    height: 100vh;
-    padding: 50px;
+    height: 70vh;
+    padding: 0 50px;
     display: flex;
-    overflow-x: hidden;
-    padding-bottom: none;
-    margin-bottom: none;
+    overflow: hidden;
+    padding-top: 30px;
 }
 
 
-.three .content{
+.three .content {
     width: 70%;
     order: 2;
+    overflow: hidden;
 }
 
-.three .content h2{
+.three .content h2 {
     text-align: right;
     margin-bottom: 30px;
     position: relative;
 }
-.three .content h2::after{
+
+.three .content h2::after {
     content: "";
     display: block;
     width: 10%;
@@ -372,36 +372,142 @@ section.about{
     right: 0;
 }
 
-.three .content p{
+.three .content p {
     line-height: 55px;
     letter-spacing: 1px;
 }
 
-.three canvas{
+.three canvas {
     order: 2;
 }
 
-@media screen and (max-width:1200px){
-    .three{
+@media screen and (max-width:1200px) {
+    .three {
         width: 100%;
     }
 }
 
-@media screen and (max-width:992px){
-    .three{
+@media screen and (max-width:992px) {
+    .three {
+        margin-top: 30px;
         width: 100%;
+        height: 100vh;
         display: block;
         padding: 10px;
         overflow: hidden;
+        margin-bottom: 20px;
     }
-    .three .content{
+
+    .three .content {
         width: 100%;
     }
-    .three canvas{
-        /* height: 100vh; */
-    }
-    .three .content p{
-        line-height: 40px;
+
+    .three .content p {
+        line-height: 30px;
         font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .three {
+        height: 80vh;
+        margin-bottom: 60px;
+    }
+
+    .three .div {
+        width: 10%;
+        overflow: hidden;
+    }
+}
+
+
+/* skill section */
+.skill {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.skill .title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 60px;
+}
+
+.skill .content {
+    width: 80%;
+    margin: auto;
+}
+
+.skill .content .cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill .content .cards .card {
+    width: 33%;
+    height: auto;
+    border: 1px solid white;
+    margin-right: 30px;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.skill .card i {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.skill .card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.skill .card p {
+    line-height: 40px;
+}
+
+.skill .card:hover {
+    background: rgb(55, 55, 55);
+    background: linear-gradient(0deg, rgba(55, 55, 55, 1) 0%, rgba(122, 122, 122, 1) 100%);
+    border: 1px solid rgba(231, 231, 231, 0) !important;
+}
+
+.skill .card:hover i {
+    color: lightseagreen;
+}
+
+
+@media screen and (max-width:1200px) {
+    .skill .content {
+        width: 95%;
+    }
+
+    .skill .content .cards .card {
+        padding: 40px 20px;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .skill .content .cards {
+        display: block;
+        width: 100%;
+    }
+
+    .skill .content .cards .card {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .skill .card p{
+        font-size: 0.9rem;
+        line-height: 35px;
     }
 }

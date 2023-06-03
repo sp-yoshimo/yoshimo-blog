@@ -13,7 +13,6 @@ const Hero = () => {
 
     const main_block = useRef()
     const sub_block = useRef()
-    const sub_text = useRef()
     const scroll_suggest = useRef()
 
     const location_pathname = window.location.pathname
@@ -54,15 +53,6 @@ const Hero = () => {
                 delay: startDelay
             })
 
-            gsap.fromTo(sub_text.current, {
-                opacity: 0
-            }, {
-                opacity: 1,
-                duration: 1,
-                delay: startDelay + 1.3
-            })
-
-
         } else if (location_pathname === "/home") {
             gsap.fromTo(main_block.current, {
                 width: "100%",
@@ -93,14 +83,6 @@ const Hero = () => {
                 duration: 1,
                 delay: startDelay
             })
-
-            gsap.fromTo(sub_text.current, {
-                opacity: 0
-            }, {
-                opacity: 1,
-                duration: 1,
-                delay: startDelay + 1.3
-            })
         }
 
         const options = {
@@ -124,7 +106,6 @@ const Hero = () => {
     return (
         <div className="hero">
             <div className="sub_block" ref={sub_block}>
-                <p ref={sub_text}>日進月歩</p>
             </div>
             <div className="main_block" ref={main_block}>
                 <div className="hero_bg_overlay"></div>
