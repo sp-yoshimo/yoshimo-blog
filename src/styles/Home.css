@@ -353,6 +353,7 @@ section.about {
     width: 70%;
     order: 2;
     overflow: hidden;
+    padding: 20px;
 }
 
 .three .content h2 {
@@ -400,6 +401,7 @@ section.about {
 
     .three .content {
         width: 100%;
+        padding: 5px;
     }
 
     .three .content p {
@@ -444,7 +446,7 @@ section.about {
     justify-content: center;
 }
 
-.skill .content .cards .card {
+.skill .card {
     width: 33%;
     height: auto;
     border: 1px solid white;
@@ -453,7 +455,11 @@ section.about {
     border-radius: 20px;
     text-align: center;
     transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
 }
+
 
 .skill .card i {
     font-size: 2rem;
@@ -471,13 +477,7 @@ section.about {
 }
 
 .skill .card:hover {
-    background: rgb(55, 55, 55);
-    background: linear-gradient(0deg, rgba(55, 55, 55, 1) 0%, rgba(122, 122, 122, 1) 100%);
-    border: 1px solid rgba(231, 231, 231, 0) !important;
-}
-
-.skill .card:hover i {
-    color: lightseagreen;
+    transform: scale(1.05);
 }
 
 
@@ -505,9 +505,171 @@ section.about {
     }
 }
 
-@media screen and (max-width:768px){
-    .skill .card p{
+@media screen and (max-width:768px) {
+    .skill .card p {
         font-size: 0.9rem;
         line-height: 35px;
+    }
+}
+
+
+/* news setion */
+.news {
+    margin-top: 100px;
+    width: 100%;
+    /* height: auto; */
+    margin-bottom: 50px;
+    /* overflow: hidden; */
+}
+
+.news .title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.news .content {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 30px;
+}
+
+.news .content .news-content {
+    width: 50%;
+    text-align: center;
+    z-index: 2;
+}
+
+.news-content h3 {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.news-content p {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    line-height: 50px;
+    z-index: 2;
+}
+
+.news .content .news-content a{
+    display: inline-block;
+    border: 1px solid;
+    margin-top: 30px;
+    padding: 20px 40px;
+}
+
+.news .content .img-content {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.news .content .img-content img {
+    width: 80%;
+    object-fit: cover;
+    margin: auto;
+    z-index: 3;
+}
+
+.news .content .img-content::after {
+    content: "";
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    bottom: -40px;
+    right: 20px;
+    background: rgb(78, 78, 78);
+    background: linear-gradient(90deg, rgba(78, 78, 78, 1) 0%, rgba(191, 191, 191, 1) 54%, rgba(187, 187, 187, 1) 100%);
+    border-radius: 20px;
+    z-index: 2;
+}
+
+@media screen and (max-width:992px) {
+    .news .content{
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+    .news .content .news-content{
+        width: 100%;
+        
+    }
+    .news .content .img-content{
+        width: 100%;
+        margin-bottom: 80px;
+    }
+
+    .news .content .news-content p{
+        margin: auto;
+        width: 90%;
+        line-height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+/* footer section */
+.footer{
+    width: 100%;
+    height: auto;
+    margin-top: 150px;
+    overflow: hidden;
+}
+
+.footer .content{
+    width: 60%;
+    margin: auto;
+}
+
+.footer .content .social-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .social-buttons .button{
+    margin:0 40px;
+}
+
+.social-buttons .button a i{
+    font-size: 2rem;
+    transition: 0.3s;
+}
+
+.social-buttons .button a .fa-twitter:hover{
+    color: rgb(47, 180, 233);
+}
+.social-buttons .button a .fa-github:hover{
+    color: rgb(126, 126, 126);
+}
+.social-buttons .button a .fa-unity:hover{
+    color: rgb(240, 123, 87);
+}
+
+.footer .content .copy{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width:576px){
+    .social-buttons .button a i{
+        font-size: 1.5rem;
+    }
+
+    .footer .social-buttons .button{
+        margin: 0 20px;
+    }
+
+    .footer .content{
+        width: 80%;
+    }
+
+    .footer .content .copy{
+        font-size: 0.9rem;
     }
 }

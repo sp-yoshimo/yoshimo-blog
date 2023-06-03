@@ -5,6 +5,8 @@ import { gsap,Expo } from "gsap";
 import About from "../components/About";
 import Three from "../components/Three";
 import Skill from "../components/Skill"
+import Career from "../components/News";
+import Footer from "../components/Footer";
 
 const Home = () => {
 
@@ -64,6 +66,8 @@ const Home = () => {
             <About />
             <Three />
             <Skill />
+            <Career/>
+            <Footer />
         </div>
     )
 };

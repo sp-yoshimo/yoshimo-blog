@@ -63,6 +63,7 @@ const Three = () => {
         })
     },[])
 
+
     return (
         <section className="three">
 

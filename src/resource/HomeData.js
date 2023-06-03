@@ -13,23 +13,42 @@ const Skill_data = [
         icon: "fa-brands fa-unity",
         title: "ゲーム開発",
         content: "UnityやUnreal Engine5などを用いたゲーム開発を行ってきた。Unityroomに作ったゲームをWebGL形式\
-        で投稿している。またBlenderで作成した3DモデルをUnityに導入してみたい。",
+        で投稿している。Blenderによるモデリングも勉強中だ。",
         id: 1
     },
     {
         icon: "fa-solid fa-code",
         title: "コーディング",
-        content: "PythonやJavascriptを勉強してきた。現在はNext.jsやReact、DjangoなどのWeb系のプログラミングを\
-        重点的に勉強している。C言語やJavaをいつか習得する予定でいる。",
+        content: "PythonやJavascriptを勉強してきた。現在はNextやReact、DjangoなどのWeb系のプログラミングを\
+        重点的に勉強している。C言語やJavaをいつか習得する予定だ。",
         id: 2
     },
     {
         icon:"fa-solid fa-video",
         title: "動画編集",
-        content: "自分が作成したアプリケーションを宣伝する上で動画編集は欠かせない。現在aviutlを軽く勉強中である。\
-        映像作成においてはBlenderによるCGアニメーションも視野にいれている。",
+        content: "自分が作成したアプリケーションを宣伝する上で動画編集は欠かせない。現在aviutlを勉強中である。\
+        映像作成にではBlenderによるCGアニメーションも作成したい。",
         id: 3
     }
 ]
 
-export { about_section_data, Skill_data }
+
+const SocialButtonsData=[
+    {
+        name:"twitter",
+        icon:"fa-brands fa-twitter",
+        url:"https://twitter.com/yoshimogame"
+    },
+    {
+        name:"github",
+        icon:"fa-brands fa-github",
+        url:"https://github.com/sp-yoshimo"
+    },
+    {
+        name:"unityroom",
+        icon:"fa-brands fa-unity",
+        url:"https://unityroom.com/users/yoshimo_game"
+    },
+]
+
+export { about_section_data, Skill_data, SocialButtonsData }
