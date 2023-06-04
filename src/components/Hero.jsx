@@ -119,7 +119,6 @@ const Hero = () => {
                         </h2>
                         <span ref={typedref}></span>
                         <br />
-                        <a href="/blog">BLOG</a>
                     </div>
                 </div>
             </div>

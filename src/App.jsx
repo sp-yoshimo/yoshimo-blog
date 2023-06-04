@@ -6,6 +6,7 @@ import Blog from './routes/Blog'
 import Contact from './routes/Contact'
 import BlogDetail from './routes/BlogDetail'
 import NotFound from './components/NotFound'
+import CategoryBlog from "./routes/CategoryBlog"
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/blog/:id' element={<BlogDetail />} />
+          <Route path='/category/:id' element={<CategoryBlog />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='*' element={<NotFound/>} />
         </Routes>

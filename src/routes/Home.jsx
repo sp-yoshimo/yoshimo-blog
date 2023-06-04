@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Hero from "../components/Hero";
 import "../styles/Home.css"
-import { gsap,Expo } from "gsap";
+import { gsap } from "gsap";
 import About from "../components/About";
 import Three from "../components/Three";
 import Skill from "../components/Skill"

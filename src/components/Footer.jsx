@@ -27,7 +27,7 @@ const Footer = () => {
                 <div className="social-buttons">
                     {SocialButtonsData.map((button) => (
                         <div className="button" key={button.name}>
-                            <a href={button.url}>
+                            <a target="_blank" href={button.url}>
                                 <i className={button.icon}></i>
                             </a>
                         </div>

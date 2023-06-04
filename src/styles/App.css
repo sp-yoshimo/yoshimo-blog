@@ -110,7 +110,7 @@
 
   .header .nav_items {
       opacity: 0;
-      display: block;
+      display: none;
       position: absolute;
       top: 100px;
       left: 50%;
@@ -129,7 +129,9 @@
   .header .nav_items li a {
       font-size: 1.5rem;
   }
-
+  .header .nav_items.active{
+    display: block;
+  }
   .header .nav_items.active::after{
       content: "";
       display: block;

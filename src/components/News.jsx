@@ -12,10 +12,10 @@ const News = () => {
 
     const [text, setText] = useState("")
 
-    const limitTextCount = innerWidth > 992 ? 100 : 70
-
     const img_ref = useRef()
     const text_ref = useRef()
+
+    const limitTextCount=100
 
     useEffect(() => {
 
