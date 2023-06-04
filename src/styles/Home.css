@@ -559,6 +559,11 @@ section.about {
     border: 1px solid;
     margin-top: 30px;
     padding: 20px 40px;
+    transition: 0.3s;
+}
+
+.news .content .news-content a:hover{
+    transform: scale(1.1);
 }
 
 .news .content .img-content {

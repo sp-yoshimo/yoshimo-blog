@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { client } from "../libs/client";
 import { useRef } from "react";
 import { limittedContent } from "../utils/SettingText";
+import { gsap } from "gsap";
 
 const CategoryBlog = () => {
     const location_pathname = window.location.pathname
@@ -11,6 +12,10 @@ const CategoryBlog = () => {
     const [blogs, setBlogs] = useState([]);
     const [renderBlogs, setRenderBlogs] = useState([]);
     const [category, setCategory] = useState({})
+
+
+    const main_ref=useRef();
+    const side_ref=useRef();
 
 
     useEffect(() => {
@@ -33,6 +38,24 @@ const CategoryBlog = () => {
             const allcategories = res.contents //すべてのカテゴリ
             setCategory(allcategories.find((cate) => cate.id === CATEGORY_ID));
         });
+
+        //GSAPによるアニメーション処理
+        gsap.fromTo(main_ref.current,{
+            translateY:"50px",
+            opacity:0
+        },{
+            duration:0.5,
+            opacity:1,
+            translateY:0
+        })
+        gsap.fromTo(side_ref.current,{
+            translateY:"-50px",
+            opacity:0
+        },{
+            duration:0.5,
+            opacity:1,
+            translateY:0
+        })
     }, []);
 
     useEffect(() => {
@@ -52,7 +75,7 @@ const CategoryBlog = () => {
                         <p>戻る</p>
                     </a>
                 </div>
-                <div className="sidebar">
+                <div className="sidebar" ref={side_ref}>
                     {category ? (
                         <div className="category">
                             <h3 className="title">現在のカテゴリ</h3>
@@ -65,7 +88,7 @@ const CategoryBlog = () => {
                         </div>
                     ) : ""}
                 </div>
-                <div className="main">
+                <div className="main" ref={main_ref}>
                     {category ? (
                         <div className="cards">
                             {renderBlogs.map((blog) => (

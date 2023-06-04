@@ -9,6 +9,16 @@
     padding-top: 100px;
 }
 
+.bg-text{
+    position: absolute;
+    z-index: 0;
+    right: 20px;
+    top: 20px;
+    font-size: 10rem;
+    opacity: 0.1;
+    font-weight: bold;
+}
+
 .blogs .content {
     width: 65%;
     display: flex;
@@ -81,6 +91,7 @@
     /* background: green; */
     margin: 40px auto;
     /* height: 70vh; */
+    z-index: 3;
 }
 
 .search {
@@ -92,6 +103,7 @@
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 40px;
+    z-index: 5;
 }
 
 .search input {
@@ -100,6 +112,7 @@
     padding: 8px;
     background-color: transparent;
     color: black;
+    z-index: 1;
 }
 
 .search button {
@@ -117,6 +130,38 @@
 
 .fa-search {
     font-size: 14px;
+}
+
+.search-result{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-not-found{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 1.5rem;
+}
+
+.paginate{
+    /* display: inline-block; */
+    display: flex;
+    width: 80%;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    background: rgb(254, 255, 255);
+    border-radius: 30px;
+}
+
+@media screen and (max-width:992px) {
+    .paginate{
+        width: 100%;
+        margin-top: 50px;
+    }
+    .bg-text{
+        font-size: 6rem;
+    }
 }
 
 @media screen and (max-width:1250px) {
@@ -200,6 +245,10 @@
     .blogs .card p {
         font-size: 0.8rem;
     }
+    .bg-text{
+        top: 30px;
+        font-size: 4rem;
+    }
 }
 
 
@@ -207,7 +256,7 @@
 .blog-detail {
     min-height: 100vh;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .blog-detail .container {
@@ -265,8 +314,8 @@
         width: 90%;
     }
 
-    .blog-detail .container .title {
-        font-size: 1.5rem;
+    .blog-detail .container .title h2{
+        font-size: 1.3rem !important;
     }
 }
 
@@ -354,25 +403,39 @@
 }
 
 
-.blogs .back-btn{
+.back-btn{
     position: absolute;
     top: 10%;
     left: 10%;
     font-size: 1.2rem;
 }
 
-.blogs .back-btn a{
+.blogs .back-btn a,
+.blog-detail .back-btn a{
     display: flex;
     align-items: center;
     transition: 0.3s;
 }
 
-.blogs .back-btn a:hover{
+.back-btn a:hover{
     color: rgb(108, 179, 236);
 }
-.blogs .back-btn a i{
+.back-btn a i{
     margin-right: 10px;
 }
+
+@media screen and (max-width:768px) {
+    .back-btn{
+        position: absolute;
+        left: 5%;
+        top: 10%;
+    }
+    .back-btn a{
+        font-size: 0.8rem;
+    }
+}
+
 .notfound p{
     margin-top: 20px;
 }
+

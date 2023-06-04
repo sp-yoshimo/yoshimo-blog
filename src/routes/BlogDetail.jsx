@@ -3,6 +3,8 @@ import { client } from "../libs/client";
 import { useState } from "react";
 import "../styles/Blog.css"
 import "../styles/RichText.css"
+import { gsap } from "gsap";
+import { useRef } from "react";
 
 const BlogDetail = () => {
 
@@ -10,6 +12,9 @@ const BlogDetail = () => {
     const ID = location_pathname.replace("/blog/", "")
 
     const [blog, setBlog] = useState()
+
+    const container_ref=useRef();
+    const back_ref=useRef();
 
     useEffect(() => {
 
@@ -32,28 +37,44 @@ const BlogDetail = () => {
             .then((res) => {
                 setBlog(res)
             })
-    }, [])
 
-    useEffect(() => {
-        console.log(blog);
-    }, [blog])
+        gsap.fromTo(container_ref.current,{
+            translateY:"200px",
+            opacity:0
+        },{
+            translateY:0,
+            opacity:1,
+            duration:0.8,
+        })
+        gsap.fromTo(back_ref.current,{
+            translateX:"-500px",
+            opacity:0
+        },{
+            translateX:0,
+            opacity:1,
+            duration:1,
+        })
+    }, [])
 
 
     return (
         <div className="blog-detail">
-            <div className="container">
+            <div className="back-btn" ref={back_ref}>
+                <a href="/blog">
+                    <i className="fa-solid fa-arrow-left"></i>
+                    <p>戻る</p>
+                </a>
+            </div>
+            <div className="container" ref={container_ref}>
                 <div className="title">
                     {blog && blog.title ? (
                         <h2>{blog.title}</h2>
                     ) : (
-                        <div>
-                            <h2>Loading..🚀</h2>
-                        </div>
-
+                        ""
                     )}
                     <div className="subtext">
                         <p>{blog && blog.createdAt ? new Date(blog.createdAt).toLocaleString() + "に投稿" : ""}</p>
-                        <p>カテゴリ : {blog && blog.category ? blog.category.name : "not found"}</p>
+                        <p>{blog && blog.category ? "カテゴリ : "+blog.category.name : ""}</p>
                     </div>
                 </div>
                 {blog && blog.thumbnail ? (

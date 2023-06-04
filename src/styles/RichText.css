@@ -53,8 +53,9 @@
     .blog-detail{
         font-size: 0.8rem;
     }
-    .blog-detail .content h2{
+    .blog-detail .content .section-title{
         margin-top: 30px;
+        font-size: 1rem;
     }
     .blog-detail .content ul li{
         list-style: none;
