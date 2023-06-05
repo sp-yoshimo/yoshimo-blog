@@ -428,7 +428,7 @@
     .back-btn{
         position: absolute;
         left: 5%;
-        top: 10%;
+        top: 13% !important;
     }
     .back-btn a{
         font-size: 0.8rem;

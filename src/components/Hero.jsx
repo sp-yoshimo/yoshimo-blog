@@ -17,7 +17,7 @@ const Hero = () => {
 
     const location_pathname = window.location.pathname
 
-    const startDelay = location_pathname === "/" ? 2 : 0.3
+    const startDelay = location_pathname === "/" ? 1.8 : 0.2
 
     //Typed.jsの処理
     useEffect(() => {
@@ -115,7 +115,7 @@ const Hero = () => {
                 <div className="container">
                     <div className="content">
                         <h2>
-                            Yoshimo HomePage
+                            Hello World
                         </h2>
                         <span ref={typedref}></span>
                         <br />

@@ -13,11 +13,11 @@ const Blog = () => {
     const [renderBlogs, setRenderBlogs] = useState([]) //レンダリングするブログ配列
     const searchRef = useRef();
 
-    const [searchWord,setSearchWord]=useState("");
+    const [searchWord, setSearchWord] = useState("");
 
-    const main_ref=useRef();
-    const side_ref=useRef();
-    const bg_text=useRef();
+    const main_ref = useRef();
+    const side_ref = useRef();
+    const bg_text = useRef();
 
     //ページネーション用の変数
     const [itemOffset, setItemOffset] = useState(0);
@@ -60,28 +60,28 @@ const Blog = () => {
         });
 
         //GSAPによるアニメーション処理
-        gsap.fromTo(main_ref.current,{
-            translateY:"30px",
-            opacity:0
-        },{
-            duration:1,
-            opacity:1,
-            translateY:0
+        gsap.fromTo(main_ref.current, {
+            translateY: "30px",
+            opacity: 0
+        }, {
+            duration: 1,
+            opacity: 1,
+            translateY: 0
         })
-        gsap.fromTo(side_ref.current,{
-            translateY:"-30px",
-            opacity:0
-        },{
-            duration:0.5,
-            opacity:1,
-            translateY:0
+        gsap.fromTo(side_ref.current, {
+            translateY: "-30px",
+            opacity: 0
+        }, {
+            duration: 0.5,
+            opacity: 1,
+            translateY: 0
         })
-        gsap.fromTo(bg_text.current,{
-            translateY:"-300px",
-        },{
-            duration:0.8,
-            translateY:0,
-            delay:0.2
+        gsap.fromTo(bg_text.current, {
+            translateY: "-300px",
+        }, {
+            duration: 0.8,
+            translateY: 0,
+            delay: 0.2
         })
     }, []);
 
@@ -93,8 +93,7 @@ const Blog = () => {
             blog.title.toLowerCase().includes(searchTerm) ||
             blog.viewer.toLowerCase().includes(searchTerm)
         );
-        setPageCount(Math.ceil(filteredBlogs.length / itemPerPage)); //ページカウントの更新
-        setRenderBlogs(Paginate(filteredBlogs));
+        setRenderBlogs(filteredBlogs);
 
     };
 
@@ -122,12 +121,12 @@ const Blog = () => {
         const newpage = page - 1
         const newOffset = (newpage * itemPerPage) % blogs.length;
         setItemOffset(newOffset);
-        
+
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         setRenderBlogs(Paginate(blogs)); // レンダリングするブログ配列を更新する
-    },[itemOffset])
+    }, [itemOffset])
 
 
     return (
@@ -147,7 +146,7 @@ const Blog = () => {
                                 <i className="fas fa-search"></i>
                             </button>
                         </form>
-                        <h3 className="search-result">{searchWord ? `「${searchWord}」の検索結果`:""}</h3>
+                        <h3 className="search-result">{searchWord ? `「${searchWord}」の検索結果` : ""}</h3>
                         {renderBlogs ? (
                             <div className="cards">
                                 {renderBlogs.map((blog) => (
@@ -167,11 +166,13 @@ const Blog = () => {
                                         <hr />
                                     </div>
                                 ))}
-                                <div className="paginate">
-                                    <Stack spacing={2}>
-                                        <Pagination count={pageCount} color="primary" onChange={handlePageChange} />
-                                    </Stack>
-                                </div>
+                                {searchWord ? "" : (
+                                    <div className="paginate">
+                                        <Stack spacing={2}>
+                                            <Pagination count={pageCount} color="primary" onChange={handlePageChange} />
+                                        </Stack>
+                                    </div>
+                                )}
                             </div>
                         ) : (
                             <div className="search-not-found">Not Found</div>
