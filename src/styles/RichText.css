@@ -24,6 +24,9 @@
 }
 
 .blog-detail .content .section-title{
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 30px;
     display: inline-block;
     margin-top: 50px;
     border-left: 1px solid rgb(90, 162, 230);

@@ -14,8 +14,8 @@ const CategoryBlog = () => {
     const [category, setCategory] = useState({})
 
 
-    const main_ref=useRef();
-    const side_ref=useRef();
+    const main_ref = useRef();
+    const side_ref = useRef();
 
 
     useEffect(() => {
@@ -40,21 +40,21 @@ const CategoryBlog = () => {
         });
 
         //GSAPによるアニメーション処理
-        gsap.fromTo(main_ref.current,{
-            translateY:"50px",
-            opacity:0
-        },{
-            duration:0.5,
-            opacity:1,
-            translateY:0
+        gsap.fromTo(main_ref.current, {
+            translateY: "50px",
+            opacity: 0
+        }, {
+            duration: 0.5,
+            opacity: 1,
+            translateY: 0
         })
-        gsap.fromTo(side_ref.current,{
-            translateY:"-50px",
-            opacity:0
-        },{
-            duration:0.5,
-            opacity:1,
-            translateY:0
+        gsap.fromTo(side_ref.current, {
+            translateY: "-50px",
+            opacity: 0
+        }, {
+            duration: 0.5,
+            opacity: 1,
+            translateY: 0
         })
     }, []);
 
@@ -92,7 +92,7 @@ const CategoryBlog = () => {
                     {category ? (
                         <div className="cards">
                             {renderBlogs.map((blog) => (
-                                <div className="card" key={blog.id}>
+                                <div className="card" key={blog.id ? blog.id : ""}>
                                     <a href={`/blog/${blog.id}`}>
                                         <div className="card-header">
                                             <img src={blog.thumbnail.url} alt="" className="card-img" />
@@ -109,7 +109,7 @@ const CategoryBlog = () => {
                                 </div>
                             ))}
                         </div>
-                    ):(
+                    ) : (
                         <div className="notfound">
                             <h2>Loading🚀</h2>
                             <p>何も表示されませんか？恐らくデータ取得の際にエラーが発生したか、URLが間違っている可能性があります。</p>

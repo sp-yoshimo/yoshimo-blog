@@ -51,12 +51,12 @@ const Blog = () => {
         getBlogData("blogs").then((res) => {
             setBlogs(res.contents);
             setRenderBlogs(Paginate(res.contents))
+            setPageCount(Math.ceil(res.contents.length / itemPerPage))
         });
 
         //すべてのカテゴリを取得する処理
         getBlogData("categories").then((res) => {
             setCategory(res.contents);
-            setPageCount(Math.ceil(res.contents.length / itemPerPage))
         });
 
         //GSAPによるアニメーション処理
