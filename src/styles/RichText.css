@@ -41,7 +41,8 @@
 }
 
 .blog-detail .content img{
-    margin: 30px 0;
+    margin-top:30px;
+    margin-bottom:10px;
     width: 50%;
     object-fit: cover;
     height:auto;
