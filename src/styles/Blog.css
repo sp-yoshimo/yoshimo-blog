@@ -17,6 +17,7 @@
     font-size: 10rem;
     opacity: 0.1;
     font-weight: bold;
+    z-index: 0;
 }
 
 .blogs .content {
@@ -160,7 +161,7 @@
         margin-top: 50px;
     }
     .bg-text{
-        font-size: 6rem;
+        font-size: 4rem;
     }
 }
 
@@ -246,8 +247,8 @@
         font-size: 0.8rem;
     }
     .bg-text{
-        top: 30px;
-        font-size: 4rem;
+        top: 40px;
+        font-size: 2.5rem;
     }
 }
 
