@@ -71,7 +71,7 @@ const News = () => {
             </div>
             <div className="content">
                 <div className="img-content" ref={img_ref}>
-                    <img src={data.thumbnail && data.thumbnail.url ? data.thumbnail.url : "https://placehold.jp/600x400.png"} alt="" />
+                    <img src={data && data.thumbnail && data.thumbnail.url ? data.thumbnail.url : "https://placehold.jp/600x400.png"} alt="" />
                 </div>
                 <div className="news-content" ref={text_ref}>
                     {/* <div className="overlay"></div> */}
