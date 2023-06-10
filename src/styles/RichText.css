@@ -52,6 +52,11 @@
     color: red;
 }
 
+.blog-detail .content .br{
+    display: block;
+    margin: 10px 0px;
+}
+
 @media screen and (max-width:512px) {
     .blog-detail{
         font-size: 0.8rem;
