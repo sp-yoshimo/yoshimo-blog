@@ -75,9 +75,9 @@ const News = () => {
                 </div>
                 <div className="news-content" ref={text_ref}>
                     {/* <div className="overlay"></div> */}
-                    <h3>{data.title ? data.title : "データ取得中🚀"}</h3>
+                    <h3>{data.title && data? data.title : "データ取得中🚀"}</h3>
                     <p>{text}</p>
-                    <a href={`/blog/${data.id ? data.id : ""}`} className="go-blog">見に行く
+                    <a href={`/blog/${data.id && data ? data.id : ""}`} className="go-blog">見に行く
                         <i className="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
