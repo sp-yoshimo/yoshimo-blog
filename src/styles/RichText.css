@@ -55,7 +55,7 @@
 
 .blog-detail .content .br{
     display: block;
-    margin: 10px 0px;
+    margin: 20px 0px;
 }
 
 @media screen and (max-width:512px) {
