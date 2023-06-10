@@ -75,3 +75,30 @@
 .submit-button:hover {
     background: rgb(92, 138, 197);
 }
+
+
+@media screen and (max-width:992px) {
+    .contact .content form{
+        width: 60%;
+    }
+}
+@media screen and (max-width:768px) {
+    .contact .content form{
+        width: 80%;
+    }
+    .alert{
+        font-size: 0.8rem;
+        padding: 15px;
+        position: absolute;
+        left: 50%;
+        text-align: center;
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width:592px) {
+    .alert{
+        width: 80%;
+        font-size: 0.7rem;
+    }
+}

@@ -48,7 +48,6 @@ const Contact = () => {
         form.current.reset()
 
         setIsSubmited(true); //メールを送信状態に
-        console.log(data);
     }
 
 
