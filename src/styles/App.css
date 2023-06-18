@@ -171,6 +171,7 @@
 
 .not-found .content{
   text-align: center;
+  max-width: 80%;
 }
 
 .not-found .content h3{
@@ -180,4 +181,13 @@
 
 .not-found .content p{
   font-size: 1.5rem;
+}
+
+@media screen and (max-width:992px) {
+  .not-found .content h3{
+    font-size: 1.5rem;
+  }
+  .not-found .content p{
+    font-size: 0.8rem;
+  }
 }
