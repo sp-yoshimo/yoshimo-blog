@@ -14,7 +14,7 @@
 .contact .content form {
     width: 40%;
     margin: auto;
-    z-index: 5;
+    z-index: 1;
 }
 
 .contact input,
