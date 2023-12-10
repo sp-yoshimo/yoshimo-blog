@@ -37,7 +37,7 @@ const SocialButtonsData=[
     {
         name:"twitter",
         icon:"fa-brands fa-twitter",
-        url:"https://twitter.com/yoshimogame"
+        url:"https://twitter.com/sp_yoshimo"
     },
     {
         name:"github",
